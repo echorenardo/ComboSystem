@@ -1,6 +1,6 @@
 public class FirstAttackState : AttackState
 {
-    private Timer _timer;
+    private readonly Timer _timer;
 
     public FirstAttackState(Attacker attacker, AnimationPlayer animationPlayer, Timer timer): base(attacker, animationPlayer)
     {

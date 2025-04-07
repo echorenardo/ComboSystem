@@ -1,6 +1,6 @@
 public class ThirdAttackState : AttackState
 {
-    private Timer _timer;
+    private readonly Timer _timer;
 
     public ThirdAttackState(Attacker attacker, AnimationPlayer animationPlayer, Timer timer) : base(attacker, animationPlayer)
     {
@@ -11,7 +11,6 @@ public class ThirdAttackState : AttackState
     {
         _attacker.UpdateCounter(true);
     }
-
 
     public override void OnEnter()
     {
