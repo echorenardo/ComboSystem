@@ -28,7 +28,7 @@
       <p><em>Комбо-атака персонажа Noob Saibot. Ultimate Mortal Kombat 3</em></p>
 </div>
 
-Заготовив анимации на каждый тип атаки, Вам необходимо добавить в конец каждой их них событие анимации - "Animation Event". Сделать это можно в окне Animation выбранной анимации, нажав ПКМ под таймлайном и выбрав "Add Animation Event". В окне Inspector у "Animation Event" в поле "Function" обязательно введите "OnAnimationCompleted". Таким образом, мы всегда будем знать когда завершилась анимация атаки и вызывать определенный обработчик события из кода проекта, - в нашем случае - метод "OnAnimationCompleted" из класса "AnimationPlayer", который, в свою очередь, так же оповещает подписчиков на своего события OnAnimationCompleted. К полю "Object" вернёмся чуть позже.
+Заготовив анимации на каждый тип атаки, Вам необходимо добавить в конец каждой их них событие анимации - "Animation Event". Сделать это можно в окне Animation выбранной анимации, нажав ПКМ под таймлайном и выбрав "Add Animation Event". В окне Inspector у "Animation Event" в поле "Function" обязательно введите "OnAnimationCompleted". Таким образом, мы всегда будем знать когда завершилась анимация атаки и вызывать определенный обработчик события из кода проекта, - в нашем случае - метод "OnAnimationCompleted" из класса "AnimationPlayer", который, в свою очередь, так же оповещает подписчиков своего события OnAnimationCompleted. К полю "Object" вернёмся чуть позже.
 
 <div align="center">
     <img src=".github/screenshot_2.png" alt="Animation window" width="400" />
