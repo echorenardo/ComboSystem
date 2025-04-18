@@ -6,7 +6,6 @@ public class Attacker : MonoBehaviour
 
     private StateMachine<Attacker, AttackState> _stateMachine;
 
-    public AttackState CurrentState { get; private set; }
     public int AttackQueueCounter { get; private set; }
 
     private void Start()
