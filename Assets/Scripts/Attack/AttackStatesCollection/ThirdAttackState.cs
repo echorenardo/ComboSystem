@@ -1,11 +1,6 @@
 public class ThirdAttackState : AttackState
 {
-    private readonly Timer _timer;
-
-    public ThirdAttackState(Attacker attacker, AnimationPlayer animationPlayer, Timer timer) : base(attacker, animationPlayer)
-    {
-        _timer = timer;
-    }
+    public ThirdAttackState(Attacker attacker, AnimationPlayer animationPlayer) : base(attacker, animationPlayer) {}
 
     public override void OnActivated()
     {

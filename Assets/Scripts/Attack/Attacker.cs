@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class Attacker : MonoBehaviour
 {
-    private readonly float _timeForReset = 1f;
-
     [SerializeField] private AnimationPlayer _animationPlayer;
     [SerializeField] private Timer _timer;
 
@@ -15,9 +13,7 @@ public class Attacker : MonoBehaviour
     private void Start()
     {
         _stateMachine = new StateMachine<Attacker, AttackState>(this);
-
         FillStates();
-        _timer.Setup(_timeForReset);
 
         _stateMachine.SetInitialState<UnactiveAttackState>();
     }
@@ -46,8 +42,8 @@ public class Attacker : MonoBehaviour
     private void FillStates()
     {
         _stateMachine.AddState(new UnactiveAttackState(this, _animationPlayer));
-        _stateMachine.AddState(new FirstAttackState(this, _animationPlayer, _timer));
-        _stateMachine.AddState(new SecondAttackState(this, _animationPlayer, _timer));
-        _stateMachine.AddState(new ThirdAttackState(this, _animationPlayer, _timer));
+        _stateMachine.AddState(new FirstAttackState(this, _animationPlayer));
+        _stateMachine.AddState(new SecondAttackState(this, _animationPlayer));
+        _stateMachine.AddState(new ThirdAttackState(this, _animationPlayer));
     }
 }

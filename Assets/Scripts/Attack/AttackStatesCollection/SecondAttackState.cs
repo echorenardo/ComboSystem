@@ -1,11 +1,6 @@
 public class SecondAttackState : AttackState
 {
-    private readonly Timer _timer;
-
-    public SecondAttackState(Attacker attacker, AnimationPlayer animationPlayer, Timer timer) : base(attacker, animationPlayer)
-    {
-        _timer = timer;
-    }
+    public SecondAttackState(Attacker attacker, AnimationPlayer animationPlayer) : base(attacker, animationPlayer) {}
 
     public override void OnActivated()
     {
@@ -15,18 +10,13 @@ public class SecondAttackState : AttackState
     public override void OnEnter()
     {
         _animationPlayer.AnimationCompleted += OnAnimationCompleted;
-        _timer.Completed += OnTimerCompleted;
 
-        _timer.Restart();
         _animationPlayer.Play(PlayerAnimations.IsSecondAttackState);
     }
 
     public override void OnExit()
     {
         _animationPlayer.AnimationCompleted -= OnAnimationCompleted;
-        _timer.Completed -= OnTimerCompleted;
-
-        _timer.Reset();
     }
 
     private void OnAnimationCompleted()
@@ -37,10 +27,5 @@ public class SecondAttackState : AttackState
             _attacker.SwitchState<ThirdAttackState>();
         else
             _attacker.SwitchState<UnactiveAttackState>();
-    }
-
-    private void OnTimerCompleted()
-    {
-        _attacker.SwitchState<UnactiveAttackState>();
     }
 }
