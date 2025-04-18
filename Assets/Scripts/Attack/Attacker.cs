@@ -3,7 +3,6 @@ using UnityEngine;
 public class Attacker : MonoBehaviour
 {
     [SerializeField] private AnimationPlayer _animationPlayer;
-    [SerializeField] private Timer _timer;
 
     private StateMachine<Attacker, AttackState> _stateMachine;
 
