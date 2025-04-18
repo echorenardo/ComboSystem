@@ -37,9 +37,9 @@ public class PlayerAnimations : MonoBehaviour
 private void FillStates()
 {
   _stateMachine.AddState(new UnactiveAttackState(this, _animationPlayer));
-  _stateMachine.AddState(new FirstAttackState(this, _animationPlayer, _timer));
-  _stateMachine.AddState(new SecondAttackState(this, _animationPlayer, _timer));
-  _stateMachine.AddState(new ThirdAttackState(this, _animationPlayer, _timer));
+  _stateMachine.AddState(new FirstAttackState(this, _animationPlayer));
+  _stateMachine.AddState(new SecondAttackState(this, _animationPlayer));
+  _stateMachine.AddState(new ThirdAttackState(this, _animationPlayer));
 }
 ```
 
