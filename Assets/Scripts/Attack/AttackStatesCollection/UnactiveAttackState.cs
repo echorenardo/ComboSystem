@@ -15,9 +15,4 @@ public class UnactiveAttackState : AttackState
 
         _animationPlayer.Play(PlayerAnimations.IsUnactiveAttackState);
     }
-
-    public override void OnExit()
-    {
-
-    }
 }
