@@ -16,19 +16,16 @@ public class ThirdAttackState : AttackState
     {
         _animationPlayer.AnimationCompleted += OnAnimationCompleted;
 
-        _timer.Restart();
         _animationPlayer.Play(PlayerAnimations.IsThirdAttackState);
     }
 
     public override void OnExit()
     {
-        _timer.Reset();
+        _animationPlayer.AnimationCompleted -= OnAnimationCompleted;
     }
 
     private void OnAnimationCompleted()
     {
-        _animationPlayer.AnimationCompleted -= OnAnimationCompleted;
-
         _attacker.UpdateCounter(false);
 
         _attacker.SwitchState<UnactiveAttackState>();

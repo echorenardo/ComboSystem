@@ -23,6 +23,7 @@ public class SecondAttackState : AttackState
 
     public override void OnExit()
     {
+        _animationPlayer.AnimationCompleted -= OnAnimationCompleted;
         _timer.Completed -= OnTimerCompleted;
 
         _timer.Reset();
@@ -30,8 +31,6 @@ public class SecondAttackState : AttackState
 
     private void OnAnimationCompleted()
     {
-        _animationPlayer.AnimationCompleted -= OnAnimationCompleted;
-
         _attacker.UpdateCounter(false);
 
         if (_attacker.AttackQueueCounter > 0)
