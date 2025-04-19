@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class InputController : MonoBehaviour
 {
-    [SerializeField] private Attacker _attacker;
-
     private readonly KeyCode _attackKey = KeyCode.J;
+
+    [SerializeField] private Attacker _attacker;
 
     private void Update()
     {
